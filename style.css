@@ -1,0 +1,108 @@
+/* Basic mobile-first styles */
+body {
+    background-image: url('https://raw.githubusercontent.com/arpit456jain/Amazing-Js-Projects/master/Candy%20Crush/utils/bg.png');
+    background-size: cover;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align at the top */
+    height: 100vh;
+    flex-direction: column;
+    padding-top: 50px; /* Space for score board */
+}
+
+/* Grid styling */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr); /* 8 columns */
+    grid-template-rows: repeat(8, 1fr); /* 8 rows */
+    grid-gap: 5px;
+    width: 80vw;  /* Use 80% of the viewport width */
+    height: 70vh; /* Use 70% of the viewport height */
+    padding: 5px;
+    background-color: rgba(109, 127, 151, 0.5);
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) inset, 0 1px 0 #fff;
+    overflow: hidden;
+}
+
+/* Candy squares resize dynamically */
+.grid div {
+    width: 100%;
+    padding-top: 100%; /* Aspect ratio for square layout */
+    background-size: cover;
+}
+
+/* Scoreboard */
+.scoreBoard {
+    background-color: cyan;
+    border-radius: 20px;
+    width: 80%;
+    height: 120px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #85796b;
+    position: relative;
+    top: 0;
+    margin-bottom: 20px;
+}
+
+h3, h1 {
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+}
+
+/* Large screens */
+@media (min-width: 1024px) {
+    .grid {
+        width: 60vw; /* Allow more space on larger screens */
+        height: 60vh;
+    }
+
+    .scoreBoard {
+        width: 30%;
+        height: 120px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Medium screens (e.g., tablets) */
+@media (max-width: 1024px) and (min-width: 768px) {
+    .grid {
+        width: 70vw;
+        height: 70vh;
+    }
+
+    .scoreBoard {
+        width: 40%;
+        height: 120px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Small screens (e.g., smartphones) */
+@media (max-width: 767px) {
+    .grid {
+        width: 90vw;
+        height: 70vh; /* Adjust grid height for smaller screens */
+    }
+
+    .scoreBoard {
+        width: 90%;
+        height: 100px;
+    }
+
+    h1 {
+        font-size: 1.2rem;
+    }
+}
